@@ -1,4 +1,4 @@
-# DeadEgos
+# DeadEgos.org
 
 We are dedicated to dismantling greed and overcoming the limitations of capitalism by providing technology and solutions that remove barriers and empower the most underserved in our communities. We strive to foster an inclusive environment and welcome all non-discriminating groups and people to join our mission. Our focus is on empowering and supporting individuals and organizations to harness and foster their capabilities and skills. We are committed to creating opportunities that enable self-sufficiency and sustainability that encourage equitable access to technology for those who need it most.
 
