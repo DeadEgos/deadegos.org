@@ -25,10 +25,21 @@ defmodule DeadEgosWeb.Router do
     get "/services/custom_development", PageController, :custom_development
     get "/services/training_and_workshops", PageController, :training_and_workshops
     get "/services/tech_consultancy_services", PageController, :tech_consultancy_services
-    get "/services/building_and_improving_websites", PageController, :building_and_improving_websites
+
+    get "/services/building_and_improving_websites",
+        PageController,
+        :building_and_improving_websites
+
     get "/services/opensource_projects", PageController, :opensource_projects
-    get "/services/software_operational_costs_reduction", PageController, :software_operational_costs_reduction
-    get "/services/ada_compliance_and_web_standards", PageController, :ada_compliance_and_web_standards
+
+    get "/services/software_operational_costs_reduction",
+        PageController,
+        :software_operational_costs_reduction
+
+    get "/services/ada_compliance_and_web_standards",
+        PageController,
+        :ada_compliance_and_web_standards
+
     get "/services/security_enhancements", PageController, :security_enhancements
   end
 
