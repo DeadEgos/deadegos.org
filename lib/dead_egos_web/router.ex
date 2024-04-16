@@ -18,6 +18,18 @@ defmodule DeadEgosWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/mission", PageController, :mission
+    get "/mission/only_for_non_profit", PageController, :only_for_non_profit
+
+    get "/services", PageController, :services
+    get "/services/custom_development", PageController, :custom_development
+    get "/services/training_and_workshops", PageController, :training_and_workshops
+    get "/services/tech_consultancy_services", PageController, :tech_consultancy_services
+    get "/services/building_and_improving_websites", PageController, :building_and_improving_websites
+    get "/services/opensource_projects", PageController, :opensource_projects
+    get "/services/software_operational_costs_reduction", PageController, :software_operational_costs_reduction
+    get "/services/ada_compliance_and_web_standards", PageController, :ada_compliance_and_web_standards
+    get "/services/security_enhancements", PageController, :security_enhancements
   end
 
   # Other scopes may use custom stacks.
