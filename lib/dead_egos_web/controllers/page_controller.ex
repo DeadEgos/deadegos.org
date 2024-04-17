@@ -52,4 +52,8 @@ defmodule DeadEgosWeb.PageController do
   def contact(conn, _params) do
     render(conn, :contact)
   end
+
+  def privacy(conn, _params) do
+    render(conn, :privacy)
+  end
 end

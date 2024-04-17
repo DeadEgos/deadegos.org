@@ -44,6 +44,7 @@ defmodule DeadEgosWeb.Router do
         :ada_compliance_and_web_standards
 
     get "/services/security_enhancements", PageController, :security_enhancements
+    get "/privacy", PageController, :privacy
   end
 
   # Other scopes may use custom stacks.
