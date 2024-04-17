@@ -23,6 +23,8 @@
       <a href={~p"/about"} class="text-sm font-semibold leading-6 text-zinc-100">About</a>
       <a href={~p"/contact"} class="text-sm font-semibold leading-6 text-zinc-100">Contact</a>
     </div>
+
+    
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
       <a href="#" class="text-sm font-semibold leading-6 text-zinc-100">Log in <span aria-hidden="true">&rarr;</span></a>
     </div>
@@ -54,7 +56,38 @@
             <a href={~p"/contact"} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Contact</a>
           </div>
           <div class="py-6">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-700">Log in</a>
+           <%= if @current_user do %>
+              <%= @current_user.email %>
+              <.link
+                href={~p"/users/settings"}
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-700"
+              >
+                Settings
+              </.link>
+
+              <.link
+                href={~p"/users/log_out"}
+                method="delete"
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-700"
+              >
+                Log out
+              </.link>
+          <% else %>
+
+              <.link
+                href={~p"/users/register"}
+               class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-700"
+              >
+                Register
+              </.link>
+
+              <.link
+                href={~p"/users/log_in"}
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-700"
+              >
+                Log in
+              </.link>
+          <% end %>
           </div>
         </div>
       </div>
