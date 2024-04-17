@@ -16,49 +16,68 @@
 //
 
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
-import "phoenix_html"
+import "phoenix_html";
 // Establish Phoenix Socket and LiveView configuration.
-import {Socket} from "phoenix"
-import {LiveSocket} from "phoenix_live_view"
-import topbar from "../vendor/topbar"
+import { Socket } from "phoenix";
+import { LiveSocket } from "phoenix_live_view";
+import topbar from "../vendor/topbar";
 
-let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
+let csrfToken = document
+  .querySelector("meta[name='csrf-token']")
+  .getAttribute("content");
+let liveSocket = new LiveSocket("/live", Socket, {
+  params: { _csrf_token: csrfToken },
+});
 
 // Show progress bar on live navigation and form submits
-topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
-window.addEventListener("phx:page-loading-start", _info => topbar.show(300))
-window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
+topbar.config({ barColors: { 0: "#29d" }, shadowColor: "rgba(0, 0, 0, .3)" });
+window.addEventListener("phx:page-loading-start", (_info) => topbar.show(300));
+window.addEventListener("phx:page-loading-stop", (_info) => topbar.hide());
 
 // connect if there are any LiveViews on the page
-liveSocket.connect()
+liveSocket.connect();
 
 // expose liveSocket on window for web console debug logs and latency simulation:
 // >> liveSocket.enableDebug()
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session
 // >> liveSocket.disableLatencySim()
-window.liveSocket = liveSocket
+window.liveSocket = liveSocket;
 
-
-// scrolling for the nav
+// scrolling logic for the nav menu
 let lastScrollTop = 0;
-const navElement = document.getElementById('main_nav');
+const navElement = document.getElementById("main_nav");
 
-window.addEventListener('scroll', function() {
-  // Get the current scroll position
+window.addEventListener("scroll", function () {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
-  // Check if the current scroll is up or down compared to the last scroll position
-  if (scrollTop > lastScrollTop){
+  if (scrollTop > lastScrollTop) {
     // Scrolling down
-    navElement.classList.add('-translate-y-80');
-    navElement.classList.remove('-translate-y-0');
-
+    navElement.classList.add("-translate-y-80");
+    navElement.classList.remove("-translate-y-0");
   } else {
     // Scrolling up
-    navElement.classList.remove('-translate-y-80');
-    navElement.classList.add('-translate-y-0');
+    navElement.classList.remove("-translate-y-80");
+    navElement.classList.add("-translate-y-0");
   }
-  // Update the last scroll position to the current position
   lastScrollTop = scrollTop;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const open_mobile_nav = document.getElementById("open_mobile_nav");
+  const close_mobile_nav = document.getElementById("close_mobile_nav");
+
+  // Main nav open menu button
+  open_mobile_nav.addEventListener("click", () => {
+    const targetElement = document.getElementById("mobile_menu");
+    targetElement.classList.add('opacity-100', 'visible');
+    targetElement.classList.remove('opacity-0', 'invisible');
+
+
+  });
+
+  close_mobile_nav.addEventListener("click", () => {
+    const targetElement = document.getElementById("mobile_menu");
+    targetElement.classList.add('opacity-0', 'invisible');
+    targetElement.classList.remove('opacity-100', 'visible');
+    targetElement.style.height = null;
+  });
 });

@@ -1,13 +1,16 @@
-<header id="main_nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-zinc-900/90 backdrop-blur ease-in-out transform-gpu">
-  <nav class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
+<header id="main_nav" class="fixed inset-x-0 top-0 z-50 bg-zinc-900/90 backdrop-blur ease-in-out transition-all duration-300  transform-gpu">
+  <nav  class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="/" class="-m-1.5 p-1.5">
-        <span class="sr-only">Dead Egos</span>
+      <a href="/" class="-m-1.5 p-1.5" >
+        <span class="sr-only">DeadEgos.Org</span>
         <img class="h-16 w-auto" src={~p"/images/logo.png"} alt="">
       </a>
     </div>
+    <div class="flex lg:hidden lg:gap-x-1 text-zinc-200 font-black text-center text-2xl">
+        DeadEgos.Org
+    </div>
     <div class="flex lg:hidden">
-      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-zinc-700">
+      <button id="open_mobile_nav" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-zinc-300">
         <span class="sr-only">Open main menu</span>
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -15,24 +18,27 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#" class="text-sm font-semibold leading-6 text-zinc-100">Mission</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-zinc-100">Services</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-zinc-100">About</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-zinc-100">Contact</a>
+      <a href={~p"/mission"} class="text-sm font-semibold leading-6 text-zinc-100">Mission</a>
+      <a href={~p"/services"}  class="text-sm font-semibold leading-6 text-zinc-100">Services</a>
+      <a href={~p"/about"} class="text-sm font-semibold leading-6 text-zinc-100">About</a>
+      <a href={~p"/contact"} class="text-sm font-semibold leading-6 text-zinc-100">Contact</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
       <a href="#" class="text-sm font-semibold leading-6 text-zinc-100">Log in <span aria-hidden="true">&rarr;</span></a>
     </div>
   </nav>
-  <div class="lg:hidden" role="dialog" aria-modal="true">
+</header>
+
+<!-- mobile menu -->
+  <div id="mobile_menu" class="fixed z-50 inset-x-0 top-0 h-60 transition-all duration-300 opacity-0 invisible" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-50"></div>
     <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-zinc-900/10">
       <div class="flex items-center justify-between">
         <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Dead Egos</span>
+          <span class="sr-only">DeadEgos.Org</span>
           <img class="h-16 w-auto" src={~p"/images/logo.png"} alt="">
         </a>
-        <button type="button" class="-m-2.5 rounded-md p-2.5 text-zinc-700">
+        <button id="close_mobile_nav" type="button" class="-m-2.5 rounded-md p-2.5 text-zinc-700">
           <span class="sr-only">Close menu</span>
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -42,10 +48,10 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-zinc-500/10">
           <div class="space-y-2 py-6">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Misssion</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Services</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">About</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Contact</a>
+            <a href={~p"/mission"} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Misssion</a>
+            <a href={~p"/services"} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Services</a>
+            <a href={~p"/about"} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">About</a>
+            <a href={~p"/contact"} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-50">Contact</a>
           </div>
           <div class="py-6">
             <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-zinc-900 hover:bg-zinc-700">Log in</a>
@@ -54,4 +60,3 @@
       </div>
     </div>
   </div>
-</header>
