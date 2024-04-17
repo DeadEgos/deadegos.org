@@ -39,3 +39,26 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+
+// scrolling for the nav
+let lastScrollTop = 0;
+const navElement = document.getElementById('main_nav');
+
+window.addEventListener('scroll', function() {
+  // Get the current scroll position
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Check if the current scroll is up or down compared to the last scroll position
+  if (scrollTop > lastScrollTop){
+    // Scrolling down
+    navElement.classList.add('-translate-y-80');
+    navElement.classList.remove('-translate-y-0');
+
+  } else {
+    // Scrolling up
+    navElement.classList.remove('-translate-y-80');
+    navElement.classList.add('-translate-y-0');
+  }
+  // Update the last scroll position to the current position
+  lastScrollTop = scrollTop;
+});
