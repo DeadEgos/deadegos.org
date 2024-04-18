@@ -45,6 +45,17 @@ defmodule DeadEgosWeb.Router do
 
     get "/services/security_enhancements", PageController, :security_enhancements
     get "/privacy", PageController, :privacy
+    get "/terms_of_service", PageController, :terms_of_service
+    get "/about", PageController, :about
+    get "/contact", PageController, :contact
+    get "/donations", PageController, :donations
+    get "/fundrasing", PageController, :fundrasing
+    get "/documents", PageController, :documents
+    get "/guides", PageController, :guides
+    get "/jobs", PageController, :jobs
+    get "/volunteer", PageController, :volunteer
+    get "/affilenats", PageController, :affilenats
+
   end
 
   # Other scopes may use custom stacks.

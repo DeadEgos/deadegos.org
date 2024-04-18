@@ -45,15 +45,47 @@ defmodule DeadEgosWeb.PageController do
     render(conn, :mission)
   end
 
-  def about(conn, _params) do
-    render(conn, :about)
-  end
-
-  def contact(conn, _params) do
-    render(conn, :contact)
+  def donations(conn, _params) do
+    render(conn, :donations)
   end
 
   def privacy(conn, _params) do
     render(conn, :privacy)
+  end
+
+  def terms_of_service(conn, _params) do
+    render(conn, :terms_of_service)
+  end
+
+  def contact(conn, _params) do
+    render(conn, :about)
+  end
+
+  def about(conn, _params) do
+    render(conn, :about)
+  end
+
+  def fundrasing(conn, _params) do
+    render(conn, :fundrasing)
+  end
+
+  def documents(conn, _params) do
+    render(conn, :documents)
+  end
+
+  def guides(conn, _params) do
+    render(conn, :guides)
+  end
+
+  def jobs(conn, _params) do
+    render(conn, :jobs)
+  end
+
+  def volunteer(conn, _params) do
+    render(conn, :volunteer)
+  end
+
+  def affilenats(conn, _params) do
+    render(conn, :affilenats)
   end
 end
