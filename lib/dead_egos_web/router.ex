@@ -54,7 +54,7 @@ defmodule DeadEgosWeb.Router do
     get "/guides", PageController, :guides
     get "/jobs", PageController, :jobs
     get "/volunteer", PageController, :volunteer
-    get "/affilenats", PageController, :affilenats
+    get "/affiliates", PageController, :affiliates
 
   end
 
