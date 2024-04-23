@@ -55,7 +55,6 @@ defmodule DeadEgosWeb.Router do
     get "/jobs", PageController, :jobs
     get "/volunteer", PageController, :volunteer
     get "/affiliates", PageController, :affiliates
-
   end
 
   # Other scopes may use custom stacks.

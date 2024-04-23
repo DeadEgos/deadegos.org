@@ -10,15 +10,24 @@ defmodule DeadEgosWeb.PageController do
   end
 
   def training_and_workshops(conn, _params) do
-    render(conn, :training_and_workshops, page_title: "Training / Workshops |", page_description: "")
+    render(conn, :training_and_workshops,
+      page_title: "Training / Workshops |",
+      page_description: ""
+    )
   end
 
   def tech_consultancy_services(conn, _params) do
-    render(conn, :tech_consultancy_services, page_title: "Tech Consultancy Services |", page_description: "")
+    render(conn, :tech_consultancy_services,
+      page_title: "Tech Consultancy Services |",
+      page_description: ""
+    )
   end
 
   def building_and_improving_websites(conn, _params) do
-    render(conn, :building_and_improving_websites, page_title: "Building and Improving Websites |", page_description: "")
+    render(conn, :building_and_improving_websites,
+      page_title: "Building and Improving Websites |",
+      page_description: ""
+    )
   end
 
   def opensource_projects(conn, _params) do
@@ -26,15 +35,24 @@ defmodule DeadEgosWeb.PageController do
   end
 
   def software_operational_costs_reduction(conn, _params) do
-    render(conn, :software_operational_costs_reduction, page_title: "Software Operational Costs Reduction |", page_description: "")
+    render(conn, :software_operational_costs_reduction,
+      page_title: "Software Operational Costs Reduction |",
+      page_description: ""
+    )
   end
 
   def ada_compliance_and_web_standards(conn, _params) do
-    render(conn, :ada_compliance_and_web_standards, page_title: "ADA Compliance and Web Standards |", page_description: "")
+    render(conn, :ada_compliance_and_web_standards,
+      page_title: "ADA Compliance and Web Standards |",
+      page_description: ""
+    )
   end
 
   def security_enhancements(conn, _params) do
-    render(conn, :security_enhancements, page_title: "Security Enhancements |", page_description: "")
+    render(conn, :security_enhancements,
+      page_title: "Security Enhancements |",
+      page_description: ""
+    )
   end
 
   def services(conn, _params) do
